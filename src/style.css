@@ -1,0 +1,142 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class], ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body, h1, h2, h3, h4, p, ul[class], ol[class],
+li, figure, figcaption, blockquote, dl, dd {
+  margin: 0;
+}
+
+.font-style {
+  font-family: "Roboto", sans-serif;
+  color: #000000;
+  font-size: 18px;
+}
+
+.hide {
+  display: none;
+}
+
+.todo__block {
+  display: block;
+  position: relative;
+  max-width: 60%;
+  margin: 0 auto;
+  padding: 13px 8px;
+}
+.todo__list-priority {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.todo__list-priority__header {
+  text-transform: uppercase;
+  margin: 12px auto;
+}
+.todo__input {
+  position: relative;
+  width: 100%;
+}
+.todo__task-add {
+  position: relative;
+  width: 100%;
+  height: 45px;
+  padding: 12px;
+  border: 1px solid #989898;
+  border-radius: 6px;
+}
+.todo__task-add__button {
+  background-color: inherit;
+  background-image: url('./icons/add.svg');
+  border: none;
+  position: absolute;
+  top: 25%;
+  right: 12px;
+  min-width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 8px;
+  padding: 14px 12px;
+  border: 1px solid #989898;
+  border-radius: 6px;
+}
+.task__structure {
+  display: flex;
+}
+.task__mark {
+  appearance: none;
+  position: relative;
+}
+.task__mark::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #989898;
+  border-radius: 50%;
+}
+.task__mark:checked::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  top: 3px;
+  left: 3px;
+  background-color: #C4C4C4;
+  border-radius: 50%;
+}
+.task__text {
+  padding: 2px 18px 2px 12px;
+}
+.task__remove {
+  display: block;
+  position: relative;
+  min-width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.task__remove::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #998899;
+  transform: rotate(45deg);
+}
+.task__remove::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #998899;
+  transform: rotate(-45deg);
+}
+
+.tasks__list {
+  width: 100%;
+  height: 100%;
+}
+
+.completed {
+  background-color: #F4F4F4;
+}
